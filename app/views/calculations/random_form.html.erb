@@ -1,6 +1,9 @@
-<h1>Enter range for random number</h1>
-<form action="/random/results">
-  <input type="text" name="user_min" placeholder="Minimum number" />
-  <input type="text" name="user_max" placeholder="Maximum number" />
-  <button>Pick random number</button>
+<form action="/random/results" method="get">
+  <label for="user_min">Minimum</label>
+  <input type="text" id="user_min" name="user_min" placeholder = "E.g. 1.5"><br>
+
+  <label for="user_max">Maximum</label>
+  <input type="text" id="user_max" name="user_max" placeholder = "E.g. 4.5"><br>
+
+  <button type="submit">Pick random number</button>
 </form>

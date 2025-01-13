@@ -18,7 +18,7 @@ class CalculationsController < ApplicationController
   end
 
   def square_root_results
-    @number = params.fetch("user_number").to_f
+    @number = params.fetch("number").to_f
     @square_root = Math.sqrt(@number)
     render({ :template => "calculations/square_root_results" })
   end
@@ -37,7 +37,7 @@ class CalculationsController < ApplicationController
     @payment = (@principal * monthly_rate) / (1 - (1 + monthly_rate) ** -months)
   
     # Format the results for proper display
-    @formatted_apr = (@apr * 100).round(1).to_s + "%" # Formats as percentage with 1 decimal
+    @formatted_apr = (@apr * 100).round(4).to_s + "%"
     @formatted_principal = ActionController::Base.helpers.number_to_currency(@principal)
     @formatted_payment = ActionController::Base.helpers.number_to_currency(@payment)
   
